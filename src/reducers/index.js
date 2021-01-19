@@ -1,4 +1,4 @@
-import { GET_POSTS, SEARCH_POST, ERROR } from "../types"
+import { GET_POSTS, SEARCH_POST } from "../types"
 
 const initialState = {
     isLoading: true,
@@ -32,11 +32,6 @@ const posts = (state = initialState, action) => {
             return {
                 ...state,
                 search: action.payload
-            }
-        case ERROR: 
-            return {
-                ...state,
-                error: action.payload
             }
         default:
             return state;

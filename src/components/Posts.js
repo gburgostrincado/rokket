@@ -1,15 +1,7 @@
 import { useSelector } from "react-redux"
-import { ERROR } from "../types"
 
 const Posts = ({posts, dispatch}) => {
     const filterPosts = useSelector(state => state.filterPosts)
-
-    if(filterPosts?.length === 0) {
-        dispatch({type: ERROR, payload: 'the post does not exist'})
-    } else {
-        dispatch({type: ERROR, payload: ''})
-    }
-
     return (
             filterPosts?.length > 0 ? filterPosts.map(post => (
                 <div className="card animate__animated animate__fadeIn" key={post.id} style={{width: '18rem'}}>

@@ -9,7 +9,6 @@ function App() {
   const dispatch = useDispatch()
   const posts = useSelector(state => state.posts)
   const isLoading = useSelector(state => state.isLoading)
-  const error = useSelector(state => state.error)
 
   useEffect(() => {
     dispatch(getPosts())    
@@ -21,7 +20,6 @@ function App() {
         <img src="https://www.rokketlabs.com/assets/logos/horizontal-purple.svg" alt="logo" />
       </header>
       <div className="container">
-        {error && <p className="text-danger">{error}</p>}
         <Search dispatch={dispatch} />
         <div className="post-container  animate__animated animate__fadeIn">
         {isLoading ? <div className="spinner-border" role="status">
